@@ -4,6 +4,7 @@
 		<title>Pixel Warlock</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="CSS/styles.css">
+		<meta name="viewport" content="width=device-width, user-scalable=no">
 		<meta charset="utf-8">
 		<script type="text/javascript">
 
@@ -19,7 +20,15 @@
 
 				//main cursor
 
-				cursor: null
+				cursor: null,
+
+				// touch functionality
+
+				touches: [],
+
+				// default framerate 
+
+				framerate: 1000 / 30;
 
 				//functions go here!
 
@@ -83,6 +92,42 @@
 				editor.cursor.drawCursor(); 
 
 
+				editor.mainCanvas.addEventListener('touchend', function() {
+					editor.mainGraphicalContext.clearRect(0, 0, editor.mainCanvas.width, editor.mainCanvas.height);
+				});
+
+				editor.mainCanvas.addEventListener('touchmove', function(event) {
+  					event.preventDefault();
+ 					editor.touches = event.touches;
+				});
+
+				editor.mainCanvas.addEventListener('touchstart', function(event) {
+  					console.log('start');
+				});
+
+
+
+				setInterval(update, editor.framerate );
+
+			}
+
+			function update() {
+				var i, len = touches.length;
+
+				for (i=0; i<len; i++) {
+					var touch = touches[i];
+   					var px = touch.pageX;
+    				var py = touch.pageY;
+					editor.mainGraphicalContext.beginPath();
+					editor.mainGraphicalContext.arc(px, py, 20, 0, 2*Math.PI, true);
+					editor.mainGraphicalContext.fillStyle = "rgba(0, 0, 200, 0.2)";
+					editor.mainGraphicalContext.fill();
+					editor.mainGraphicalContext.lineWidth = 2.0;
+					editor.mainGraphicalContext.strokeStyle = "rgba(0, 0, 200, 0.8)";
+					editor.mainGraphicalContext.stroke();
+    				console.log('drawn circle at ' + px +',' + py);
+			}
+
 
 			}
 
@@ -104,7 +149,7 @@
 				}
 			}
 
-			function mouseMoved() {
+			function mouseMovedOnCanvas() {
 				// update cursor
 			}
 
