@@ -121,7 +121,9 @@
 				editor.mainGraphicalContext.clearRect(0, 0, editor.mainCanvas.width, editor.mainCanvas.height);
 
 				var i, len = editor.touches.length;
-				editor.mainGraphicalContext.strokeText("TOUCH " editor.touches.length, 20, 20);
+
+				editor.mainGraphicalContext.strokeText("TOUCH " + editor.touches.length, 20, 20);
+
 				for (i=0; i<len; i++) {
 					var touch = touches[i];
 
@@ -186,7 +188,7 @@
 	<body onload="pageLoaded()">
 		<div class="jumbotron">
   			<h1 style="text-align: center;">Pixel Warlock</h1> 
-  			<p style="text-align: center;">Pixel Warlock is a simple pixel art editor for web. Current build is pre-alpha-stoneage-zero v.0.0.0.5. </p> 
+  			<p style="text-align: center;">Pixel Warlock is a simple pixel art editor for web. Current build is pre-alpha-stoneage-zero v.0.0.0.6. </p> 
 		</div>
 
 		<section class="container">
