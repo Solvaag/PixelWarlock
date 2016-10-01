@@ -132,14 +132,16 @@
 
    					var px = sanitizedTouch.pageX;
     				var py = sanitizedTouch.pageY;
+
 					editor.mainGraphicalContext.beginPath();
 					editor.mainGraphicalContext.arc(px, py, 80, 0, 2*Math.PI, true);
-					editor.mainGraphicalContext.fillStyle = "rgba(0, 0, 200, 0.2)";
+					editor.mainGraphicalContext.fillStyle = "black";
 					editor.mainGraphicalContext.fill();
 					editor.mainGraphicalContext.lineWidth = 2.0;
-					editor.mainGraphicalContext.strokeStyle = "rgba(0, 0, 200, 0.8)";
+					editor.mainGraphicalContext.strokeStyle = "red";
 					editor.mainGraphicalContext.stroke();
-    				console.log('drawn circle at ' + px +',' + py);
+
+					editor.mainGraphicalContext.strokeText(('drawn circle at ' + px +',' + py), 20, 30);
 			}
 
 
@@ -188,7 +190,7 @@
 	<body onload="pageLoaded()">
 		<div class="jumbotron">
   			<h1 style="text-align: center;">Pixel Warlock</h1> 
-  			<p style="text-align: center;">Pixel Warlock is a simple pixel art editor for web. Current build is pre-alpha-stoneage-zero v.0.0.0.7. </p> 
+  			<p style="text-align: center;">Pixel Warlock is a simple pixel art editor for web. Current build is pre-alpha-stoneage-zero v.0.0.0.8. </p> 
 		</div>
 
 		<section class="container">
