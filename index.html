@@ -29,10 +29,15 @@
 
 				checkInitialization(editor.mainCanvas);
 				checkInitialization(editor.resultCanvas);
-				
+
 				// init contexts
 
+				editor.mainGraphicalContext = editor.mainCanvas.getContext('2d');
 
+				editor.resultGraphicalContext = editor.resultCanvas.getContext('2d');
+
+				checkInitialization(editor.mainGraphicalContext);
+				checkInitialization(editor.resultGraphicalContext);
 
 
 
