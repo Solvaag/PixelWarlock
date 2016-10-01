@@ -8,16 +8,40 @@
 		<script type="text/javascript">
 
 
-			var editor = {
+			var editor = { // the primary editor object 
+
+				//views
 				mainCanvas:  null,
 				mainGraphicalContext: null,
 
 				resultCanvas: null,
-				resultGraphicalContext: null
+				resultGraphicalContext: null,
 
-				//functions go here! 
+				//main cursor
+
+				cursor: {x:0, y:0};
+
+				//functions go here!
+
+				
 			}
 
+			var cursor = {
+				// position
+
+				x: 12,
+ 				y: 12,
+
+
+				drawCursor: function (){
+
+					mainGraphicalContext.beginPath();
+					mainGraphicalContext.moveTo(this.x - 3, this.y);
+					mainGraphicalContext.lineTo(this.x + 3, this.y);
+					mainGraphicalContext.stroke();
+
+				} 
+			}
 
 
 			function pageLoaded() {
