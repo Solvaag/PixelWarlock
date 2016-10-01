@@ -8,15 +8,34 @@
 		<script type="text/javascript">
 
 
-			var mainCanvas = null;
-			var mainGraphicalContext = null;
+			var editor = {
+				mainCanvas:  null,
+				mainGraphicalContext: null,
 
-			var resultCanvas = null;
-			var resultGraphicalContext = null; 
+				resultCanvas: null,
+				resultGraphicalContext: null
+
+				//functions go here! 
+			}
+
 
 
 			function pageLoaded() {
 				// init canvases
+
+				editor.mainCanvas = document.getElementById('mainDraw');
+
+				editor.resultCanvas = document.getElementById('resultView');
+
+				if (editor.mainCanvas) {
+					console.log("Main canvas loaded!");
+
+				}
+				
+				if (editor.resultCanvas) {
+					console.log("resultCanvas canvas loaded!");
+					
+				}
 
 				// init contexts
 
