@@ -14,6 +14,16 @@
 			var resultGraphicalContext = null; 
 
 
+			function pageLoaded() {
+				// init canvases
+
+				// init contexts
+
+
+
+
+			}
+
 
 
 
@@ -21,14 +31,15 @@
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
-	<body>
+	<body onload="pageLoaded()">
 		<div class="jumbotron">
-  		<h1>Pixel Warlock</h1> 
-  		<p>Pixel Warlock is a simple pixel art editor for web. Current build is pre-alpha-stoneage-zero v.0.0.0.0. </p> 
+  			<h1>Pixel Warlock</h1> 
+  			<p>Pixel Warlock is a simple pixel art editor for web. Current build is pre-alpha-stoneage-zero v.0.0.0.0. </p> 
 		</div>
+
 		<section class="container">
-		<canvas id="mainDraw"></canvas>
-		<canvas id="resultView"></canvas>
+			<canvas id="mainDraw"  style="border:black 1px solid;"></canvas>
+			<canvas id="resultView"></canvas>
 
 		</section>
 	</body>
