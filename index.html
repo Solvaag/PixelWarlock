@@ -40,9 +40,17 @@
 					editor.mainGraphicalContext.lineTo(this.x + 3, this.y);
 					editor.mainGraphicalContext.stroke();
 
+					editor.mainGraphicalContext.beginPath();
+					editor.mainGraphicalContext.moveTo(this.x, this.y - 3);
+					editor.mainGraphicalContext.lineTo(this.x, this.y + 3);
+					editor.mainGraphicalContext.stroke();
+
 				},
 
 				updateCursor: function(point) {
+
+					this.x = point.x;
+					this.y = point.y;
 
 				}
 
@@ -94,6 +102,10 @@
 				if(object) {
 					console.log(object + " has been initialized!");
 				}
+			}
+
+			function mouseMoved() {
+				// update cursor
 			}
 
 
