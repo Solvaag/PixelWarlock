@@ -93,7 +93,7 @@
 
 
 				editor.mainCanvas.addEventListener('touchend', function() {
-					editor.mainGraphicalContext.clearRect(0, 0, editor.mainCanvas.width, editor.mainCanvas.height);
+					//editor.mainGraphicalContext.clearRect(0, 0, editor.mainCanvas.width, editor.mainCanvas.height);
 				});
 
 				editor.mainCanvas.addEventListener('touchmove', function(event) {
@@ -119,7 +119,7 @@
    					var px = touch.pageX;
     				var py = touch.pageY;
 					editor.mainGraphicalContext.beginPath();
-					editor.mainGraphicalContext.arc(px, py, 20, 0, 2*Math.PI, true);
+					editor.mainGraphicalContext.arc(px, py, 80, 0, 2*Math.PI, true);
 					editor.mainGraphicalContext.fillStyle = "rgba(0, 0, 200, 0.2)";
 					editor.mainGraphicalContext.fill();
 					editor.mainGraphicalContext.lineWidth = 2.0;
