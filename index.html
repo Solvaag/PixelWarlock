@@ -19,7 +19,7 @@
 
 				//main cursor
 
-				cursor: {x:0, y:0};
+				cursor: null
 
 				//functions go here!
 
@@ -40,7 +40,14 @@
 					mainGraphicalContext.lineTo(this.x + 3, this.y);
 					mainGraphicalContext.stroke();
 
-				} 
+				},
+
+				updateCursor: function(point) {
+					
+				}
+
+
+
 			}
 
 
@@ -63,6 +70,9 @@
 				checkInitialization(editor.mainGraphicalContext);
 				checkInitialization(editor.resultGraphicalContext);
 
+				editor.cursor = cursor; 
+
+				editor.cursor.drawCursor(); 
 
 
 
