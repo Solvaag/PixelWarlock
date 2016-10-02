@@ -127,8 +127,7 @@
 
 				var string = 0;
 
-				editor.mainGraphicalContext.strokeStyle = "black";
-				editor.mainGraphicalContext.strokeText("TOUCH " + editor.touches.length + " loops: " + string, 20, 20);
+				
 
 				for (i=0; i<len; i++) {
 					var touch = touches[i];
@@ -140,7 +139,7 @@
     				var py = sanitizedTouch.pageY;
 
 					editor.mainGraphicalContext.beginPath();
-					editor.mainGraphicalContext.arc(px, py, 80, 0, 2*Math.PI, true);
+					editor.mainGraphicalContext.arc(px, py, 120, 0, 2*Math.PI, true);
 					editor.mainGraphicalContext.fillStyle = "black";
 					editor.mainGraphicalContext.fill();
 					editor.mainGraphicalContext.lineWidth = 2.0;
@@ -151,7 +150,8 @@
 					string++;
 				}
 
-				
+				editor.mainGraphicalContext.strokeStyle = "black";
+				editor.mainGraphicalContext.strokeText("TOUCH " + editor.touches.length + " loops: " + string, 20, 20);
 
 			}
 
@@ -198,7 +198,7 @@
 	<body onload="pageLoaded()">
 		<div class="jumbotron">
   			<h1 style="text-align: center;">Pixel Warlock</h1> 
-  			<p style="text-align: center;">Pixel Warlock is a simple pixel art editor for web. Current build is pre-alpha-stoneage-zero v.0.0.0.10. </p> 
+  			<p style="text-align: center;">Pixel Warlock is a simple pixel art editor for web. Current build is pre-alpha-stoneage-zero v.0.0.0.11. </p> 
 		</div>
 
 		<section class="container">
