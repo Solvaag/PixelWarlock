@@ -127,6 +127,9 @@
 
 				var string = 0;
 
+				editor.mainGraphicalContext.strokeStyle = "black";
+				editor.mainGraphicalContext.strokeText("TOUCH " + editor.touches.length + " loops: " + string, 20, 20);
+
 				for (i=0; i<len; i++) {
 					var touch = touches[i];
 
@@ -148,7 +151,7 @@
 					string++;
 				}
 
-				editor.mainGraphicalContext.strokeText("TOUCH " + editor.touches.length + " loops: " + string, 20, 20);
+				
 
 			}
 
