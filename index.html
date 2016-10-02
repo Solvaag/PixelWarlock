@@ -183,8 +183,8 @@
 			var rect = editor.mainCanvas.getBoundingClientRect();
 			var touch = evt;
 
-			//touch.pageX = touch.pageX - rect.left;
-			//touch.pageY = touch.pageY - rect.top;
+			touch.pageX = touch.pageX - rect.left;
+			touch.pageY = touch.pageY - rect.top;
 
 
 			return touch;
@@ -200,7 +200,7 @@
 	<body onload="pageLoaded()">
 		<div class="jumbotron">
   			<h1 style="text-align: center;">Pixel Warlock</h1> 
-  			<p style="text-align: center;">Pixel Warlock is a simple pixel art editor for web. Current build is pre-alpha-stoneage-zero v.0.0.0.13. </p> 
+  			<p style="text-align: center;">Pixel Warlock is a simple pixel art editor for web. Current build is pre-alpha-stoneage-zero v.0.0.0.14. </p> 
 		</div>
 
 		<section class="container">
