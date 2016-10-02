@@ -137,8 +137,11 @@
 					var sanitizedTouch = sanitizeTouchInput(touch);
 
 
-   					var px = sanitizedTouch.pageX;
-    				var py = sanitizedTouch.pageY;
+   					var px = sanitizedTouch.clientX;
+    				var py = sanitizedTouch.clientY;
+
+    				console.log(sanitizedTouch);
+
 
 					editor.mainGraphicalContext.beginPath();
 					editor.mainGraphicalContext.arc(px, py, 120, 0, 2*Math.PI, true);
@@ -181,10 +184,12 @@
 
 			function sanitizeTouchInput(evt) {
 			var rect = editor.mainCanvas.getBoundingClientRect();
+
+			console.log(rect);
 			var touch = evt;
 
-			touch.pageX = touch.pageX - rect.left;
-			touch.pageY = touch.pageY - rect.top;
+			var px = touch.clientX - rect.left;
+			var py = touch.clientY - rect.top;
 
 
 			return touch;
