@@ -11,6 +11,12 @@
 
 			var editor = { // the primary editor object 
 
+
+				screenDetails: {
+					width: 0,
+					height: 0
+				},
+
 				//views
 				mainCanvas:  null,
 				mainGraphicalContext: null,
@@ -28,6 +34,14 @@
 				framerate: 1000 / 30
 
 				//functions go here!
+
+				updateScreen: function() {
+
+					this.mainCanvas.width = this.screenDetails.width;
+					this.mainCanvas.height = this.screenDetails.height; 
+
+
+				}
 
 				
 			}
@@ -105,8 +119,10 @@
 
 				});
 
-				editor.mainCanvas.width = window.screen.width;
-				editor.mainCanvas.height = window.screen.height; 
+				editor.screenDetails.width = window.screen.width;
+				editor.screenDetails.height = window.screen.height;
+
+				editor.updateScreen();
 
 				setInterval(update, editor.framerate );
 
