@@ -569,13 +569,14 @@
 						"selection":
 						[
 							[
-								3565,
-								3565
+								4119,
+								4119
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 2939.0,

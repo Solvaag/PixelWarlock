@@ -15,9 +15,6 @@
 				mainCanvas:  null,
 				mainGraphicalContext: null,
 
-				resultCanvas: null,
-				resultGraphicalContext: null,
-
 				//main cursor
 
 				cursor: null,
@@ -73,19 +70,16 @@
 
 				editor.mainCanvas = document.getElementById('mainDraw');
 
-				editor.resultCanvas = document.getElementById('resultView');
 
 				checkInitialization(editor.mainCanvas);
-				checkInitialization(editor.resultCanvas);
+
 
 				// init contexts
 
 				editor.mainGraphicalContext = editor.mainCanvas.getContext('2d');
 
-				editor.resultGraphicalContext = editor.resultCanvas.getContext('2d');
 
 				checkInitialization(editor.mainGraphicalContext);
-				checkInitialization(editor.resultGraphicalContext);
 
 				editor.cursor = cursor; 
 
@@ -111,7 +105,8 @@
 
 				});
 
-
+				editor.mainCanvas.width = window.screen.width;
+				editor.mainCanvas.height = window.screen.height; 
 
 				setInterval(update, editor.framerate );
 
@@ -144,8 +139,8 @@
 
 
 					editor.mainGraphicalContext.beginPath();
-					editor.mainGraphicalContext.arc(px, py, 120, 0, 2*Math.PI, true);
-					editor.mainGraphicalContext.fillStyle = "black";
+					editor.mainGraphicalContext.arc(px, py, 20, 0, 2*Math.PI, true);
+					editor.mainGraphicalContext.fillStyle = "blue";
 					editor.mainGraphicalContext.fill();
 					editor.mainGraphicalContext.lineWidth = 2.0;
 					editor.mainGraphicalContext.strokeStyle = "red";
@@ -203,22 +198,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	<body onload="pageLoaded()">
-		<div class="jumbotron">
-  			<h1 style="text-align: center;">Pixel Warlock</h1> 
-  			<p style="text-align: center;">Pixel Warlock is a simple pixel art editor for web. Current build is pre-alpha-stoneage-zero v.0.0.0.14. </p> 
-		</div>
-
-		<section class="container">
-			<div class="row">
-				<div class="col-sm-8">
-					<canvas id="mainDraw" width = "640" height="480" style="border:black 1px solid;"></canvas>
-				</div>
-				<div  class="col-sm-4">
-					<p>Buttons go here!</p>
-					<canvas id="resultView" width = "480" height="320" style="border:black 1px solid;"></canvas>
-				</div>
-			</div>
-
-		</section>
+					<canvas id="mainDraw"></canvas>
 	</body>
 </html>
