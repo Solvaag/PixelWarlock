@@ -118,11 +118,6 @@
 
 				var i, len = editor.touches.length;
 
-				
-
-				var string = 0;
-
-				
 
 				for (i=0; i<len; i++) {
 					var touch = editor.touches[i];
@@ -146,12 +141,10 @@
 					editor.mainGraphicalContext.strokeStyle = "red";
 					editor.mainGraphicalContext.stroke();
 
-					console.log('drawn circle at ' + px +',' + py);
-					string++;
 				}
 
 				editor.mainGraphicalContext.strokeStyle = "black";
-				editor.mainGraphicalContext.strokeText("TOUCH " + editor.touches.length + " loops: " + string, 20, 20);
+				editor.mainGraphicalContext.strokeText("TOUCH " + editor.touches.length , 20, 20);
 
 			}
 
